@@ -1,20 +1,132 @@
-.darkModeSwitch{
-    background: #3494b1;
-    display:flex;
-    position: relative;
-    cursor: pointer;
-    outline: none;
-    border: none;
-    border-radius: 1rem;
-    align-items: center;
-    justify-content: space-between;
+@import url("https://fonts.googleapis.com/css?family=Assistant:400,700|Poppins:400,700");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-.darkModeSwitch span{
-    width:30px;
-    height:30px;
-    line-height:30px;
-    display:block;
-    color:#fff;
-    background: none;
+:root {
+  --clr-light: #eaeaea;
+  --clr-dark: #3f4140;
+  --clr-header:#37c3cb;
+
+  --foreground: var(--clr-dark);
+  --background: var(--clr-light);
+  --header: var(--clr-header);
+
+  --ff-title: "Poppins", sans-serif;
+  --ff-body: "Assistant", sans-serif;
+}
+
+.darkmode {
+    --clr-light: #eaeaea;
+    --clr-dark: #3f4140;
+    --clr-header:#cb3f37;
+
+    --foreground: var(--clr-light);
+    --background: var(--clr-dark);
+    --header: var(--clr-header);
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--ff-body);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 60px;
+  font-family: var(--ff-title);
+  margin: 0 0 0.25em;
+  line-height: 1;
+  text-align: center;
+}
+
+pre {
+  padding: 10;
+  font-size: 24px;
+}
+
+.dark-mode-toggle {
+  position: absolute;
+  z-index: 100;
+  top: 1em;
+  right: 1em;
+  color: var(--foreground);
+  border: 2px solid currentColor;
+  padding: 4px;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+header {
+    background: var(--header);
+}
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.logo {
+  float: left;
+  padding: 2px 0;
+}
+
+nav {
+  float: right;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 35px;
+  padding-top: 30px;
+
+  position: relative;
+}
+
+nav a {
+  color: var(--foreground);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+nav a:hover {
+  color:var(--background);
+}
+
+nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: var(--foreground);
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+  width: 100%;
 }
