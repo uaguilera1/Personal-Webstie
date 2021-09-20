@@ -44,11 +44,29 @@ h1 {
   margin: 0 0 0.25em;
   line-height: 1;
   text-align: center;
+  padding-top: 15px;
+  padding-bottom: 50px;
 }
 
-pre {
-  padding: 10;
+h2 {
+  margin-left: 50px;
+  line-height: auto;
+  font-size: 32px;
+  text-align: justify;
+}
+
+p {
+  margin-left: 50px;
+  margin-right: 50px;
+  line-height: auto;
   font-size: 24px;
+  text-align: justify;
+  text-indent: 50px;
+}
+
+p a {
+  color: var(--foreground);
+  text-decoration: bold;
 }
 
 .dark-mode-toggle {
@@ -129,4 +147,12 @@ nav a::before {
 
 nav a:hover::before {
   width: 100%;
+}
+
+.resume {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border: 5px solid var(--foreground);
 }
